@@ -9,6 +9,7 @@
   import type { SwipeCustomEvent } from 'svelte-gestures';
   import { fade } from 'svelte/transition';
   import { t } from 'svelte-i18n';
+  import { castAsset, isCasting } from '$lib/utils/cast-sender';
 
   export let assetId: string;
   export let loopVideo: boolean;
@@ -27,7 +28,16 @@
     assetFileUrl = getAssetPlaybackUrl({ id: assetId, checksum });
     forceMuted = false;
     element.load();
+    cast(assetFileUrl);
   }
+
+  const cast = async (url: string) => {
+    if (!isCasting()) {
+      return;
+    }
+    const fullUrl = new URL(url, window.location.href);
+    await castAsset(fullUrl.href);
+  };
 
   const handleCanPlay = async (video: HTMLVideoElement) => {
     try {
