@@ -21,7 +21,7 @@ describe('NotificationList component', () => {
   });
 
   it('shows a notification when added and closes it automatically after the delay timeout', async () => {
-    const sut: RenderResult<NotificationList> = render(NotificationList);
+    const sut: RenderResult<NotificationList> = render(NotificationList, { intro: false });
     const status = await sut.findAllByRole('status');
 
     expect(status).toHaveLength(1);

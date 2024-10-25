@@ -237,11 +237,11 @@
     <div
       class="absolute right-0 h-[2px] w-10 bg-immich-primary dark:bg-immich-dark-primary"
       style:top="{scrollY + HOVER_DATE_HEIGHT}px"
-    />
+    ></div>
   {/if}
   <div id="lead-in" class="relative" style:height={relativeTopOffset + 'px'} data-label={segments.at(0)?.dateFormatted}>
     {#if relativeTopOffset > 6}
-      <div class="absolute right-[0.75rem] h-[4px] w-[4px] rounded-full bg-gray-300" />
+      <div class="absolute right-[0.75rem] h-[4px] w-[4px] rounded-full bg-gray-300"></div>
     {/if}
   </div>
   <!-- Time Segment -->
@@ -266,7 +266,7 @@
         <div
           aria-label={segment.dateFormatted + ' ' + segment.count}
           class="absolute right-[0.75rem] bottom-0 h-[4px] w-[4px] rounded-full bg-gray-300"
-        />
+        ></div>
       {/if}
     </div>
   {/each}

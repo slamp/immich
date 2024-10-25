@@ -115,5 +115,5 @@
       const remaining = currentTarget.duration - currentTarget.currentTime;
       remainingSeconds = Math.min(Math.ceil(remaining), durationInSeconds);
     }}
-  />
+  ></video>
 {/if}
