@@ -194,7 +194,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get confirm_password => 'Confirm password';
 	String get contain => 'Contain';
 	String get context => 'Context';
-	String get continue => 'Continue';
+	String get continue_text => 'Continue';
 	String get copied_image_to_clipboard => 'Copied image to clipboard.';
 	String get copied_to_clipboard => 'Copied to clipboard!';
 	String get copy_error => 'Copy error';
@@ -479,7 +479,6 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get no_results_description => 'Try a synonym or more general keyword';
 	String get no_shared_albums_message => 'Create an album to share photos and videos with people in your network';
 	String get not_in_any_album => 'Not in any album';
-	String get note_apply_storage_label_to_previously_uploaded assets => 'Note: To apply the Storage Label to previously uploaded assets, run the';
 	String get note_unlimited_quota => 'Note: Enter 0 for unlimited quota';
 	String get notes => 'Notes';
 	String get notification_toggle_setting_description => 'Enable email notifications';
@@ -1849,7 +1848,7 @@ extension on Translations {
 			case 'confirm_password': return 'Confirm password';
 			case 'contain': return 'Contain';
 			case 'context': return 'Context';
-			case 'continue': return 'Continue';
+			case 'continue_text': return 'Continue';
 			case 'copied_image_to_clipboard': return 'Copied image to clipboard.';
 			case 'copied_to_clipboard': return 'Copied to clipboard!';
 			case 'copy_error': return 'Copy error';
@@ -2259,7 +2258,6 @@ extension on Translations {
 			case 'no_results_description': return 'Try a synonym or more general keyword';
 			case 'no_shared_albums_message': return 'Create an album to share photos and videos with people in your network';
 			case 'not_in_any_album': return 'Not in any album';
-			case 'note_apply_storage_label_to_previously_uploaded assets': return 'Note: To apply the Storage Label to previously uploaded assets, run the';
 			case 'note_unlimited_quota': return 'Note: Enter 0 for unlimited quota';
 			case 'notes': return 'Notes';
 			case 'notification_toggle_setting_description': return 'Enable email notifications';

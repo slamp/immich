@@ -8,5 +8,4 @@ targets:
           input_directory: assets/translations
           input_file_pattern: .json
           output_directory: lib/i18n
-          # namespaces: false
-          # string_interpolation: braces
+          timestamp: false
