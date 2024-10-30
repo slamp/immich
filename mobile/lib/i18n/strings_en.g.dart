@@ -900,7 +900,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get warning => 'Warning';
 	String get week => 'Week';
 	String get welcome => 'Welcome';
-	String get welcome_to_immich => 'Welcome to immich';
+	String get welcome_to_immich => 'Welcome to Immich';
 	String get year => 'Year';
 	String get years_ago => '{years, plural, one {# year} other {# years}} ago';
 	String get yes => 'Yes';
@@ -2684,7 +2684,7 @@ extension on Translations {
 			case 'warning': return 'Warning';
 			case 'week': return 'Week';
 			case 'welcome': return 'Welcome';
-			case 'welcome_to_immich': return 'Welcome to immich';
+			case 'welcome_to_immich': return 'Welcome to Immich';
 			case 'year': return 'Year';
 			case 'years_ago': return '{years, plural, one {# year} other {# years}} ago';
 			case 'yes': return 'Yes';
