@@ -740,6 +740,8 @@
   "group_no": "No grouping",
   "group_owner": "Group by owner",
   "group_year": "Group by year",
+  "haptic_feedback": "Haptic feedback",
+  "haptic_feedback_description": "Enable haptic feedback",
   "has_quota": "Has quota",
   "hi_user": "Hi {name} ({email})",
   "hide_all_people": "Hide all people",

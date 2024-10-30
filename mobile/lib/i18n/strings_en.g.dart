@@ -345,6 +345,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get group_no => 'No grouping';
 	String get group_owner => 'Group by owner';
 	String get group_year => 'Group by year';
+	String get haptic_feedback => 'Haptic feedback';
+	String get haptic_feedback_description => 'Enable haptic feedback';
 	String get has_quota => 'Has quota';
 	String get hi_user => 'Hi {name} ({email})';
 	String get hide_all_people => 'Hide all people';
@@ -2122,6 +2124,8 @@ extension on Translations {
 			case 'group_no': return 'No grouping';
 			case 'group_owner': return 'Group by owner';
 			case 'group_year': return 'Group by year';
+			case 'haptic_feedback': return 'Haptic feedback';
+			case 'haptic_feedback_description': return 'Enable haptic feedback';
 			case 'has_quota': return 'Has quota';
 			case 'hi_user': return 'Hi {name} ({email})';
 			case 'hide_all_people': return 'Hide all people';
