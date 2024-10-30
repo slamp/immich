@@ -334,6 +334,7 @@ export enum MetadataKey {
   SHARED_ROUTE = 'shared_route',
   API_KEY_SECURITY = 'api_key',
   EVENT_CONFIG = 'event_config',
+  JOB_CONFIG = 'job_config',
   TELEMETRY_ENABLED = 'telemetry_enabled',
 }
 
