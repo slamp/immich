@@ -1131,6 +1131,7 @@
   "shared_link_options": "Shared link options",
   "shared_links": "Shared links",
   "shared_photos_and_videos_count": "{assetCount, plural, other {# shared photos & videos.}}",
+  "shared_with_me": "Shared with me",
   "shared_with_partner": "Shared with {partner}",
   "sharing": "Sharing",
   "sharing_enter_password": "Please enter the password to view this page.",

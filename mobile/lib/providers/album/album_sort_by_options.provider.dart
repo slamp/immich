@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:immich_mobile/providers/app_settings.provider.dart';
 import 'package:immich_mobile/services/app_settings.service.dart';
 import 'package:immich_mobile/entities/album.entity.dart';
+import 'package:immich_mobile/i18n/strings.g.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'album_sort_by_options.provider.g.dart';
@@ -65,22 +66,22 @@ class _AlbumSortHandlers {
 
 // Store index allows us to re-arrange the values without affecting the saved prefs
 enum AlbumSortMode {
-  title(1, "library_page_sort_title", _AlbumSortHandlers.title),
-  assetCount(4, "library_page_sort_asset_count", _AlbumSortHandlers.assetCount),
+  title(1, "sort_title", _AlbumSortHandlers.title),
+  assetCount(4, "sort_items", _AlbumSortHandlers.assetCount),
   lastModified(
     3,
-    "library_page_sort_last_modified",
+    "sort_modified",
     _AlbumSortHandlers.lastModified,
   ),
-  created(0, "library_page_sort_created", _AlbumSortHandlers.created),
+  created(0, "sort_created", _AlbumSortHandlers.created),
   mostRecent(
     2,
-    "library_page_sort_most_recent_photo",
+    "sort_recent",
     _AlbumSortHandlers.mostRecent,
   ),
   mostOldest(
     5,
-    "library_page_sort_most_oldest_photo",
+    "sort_oldest",
     _AlbumSortHandlers.mostOldest,
   );
 
@@ -89,6 +90,8 @@ enum AlbumSortMode {
   final AlbumSortFn sortFn;
 
   const AlbumSortMode(this.storeIndex, this.label, this.sortFn);
+
+  String getLabel() => t[label] ?? label;
 }
 
 @riverpod

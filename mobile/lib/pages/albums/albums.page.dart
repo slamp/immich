@@ -2,12 +2,13 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:auto_route/auto_route.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:immich_mobile/extensions/build_context_extensions.dart';
 import 'package:immich_mobile/extensions/theme_extensions.dart';
+import 'package:immich_mobile/i18n/strings.g.dart';
+import 'package:immich_mobile/utils/i18n.dart';
 import 'package:immich_mobile/models/albums/album_search.model.dart';
 import 'package:immich_mobile/pages/common/large_leading_tile.dart';
 import 'package:immich_mobile/providers/album/album.provider.dart';
@@ -143,7 +144,7 @@ class AlbumsPage extends HookConsumerWidget {
                       color: context.colorScheme.primary.withAlpha(100),
                     ),
                   ),
-                  hintText: 'search_albums'.tr(),
+                  hintText: tr(t.search_albums),
                   hintStyle: context.textTheme.bodyLarge?.copyWith(
                     color: context.colorScheme.onSurfaceSecondary,
                   ),
@@ -168,7 +169,7 @@ class AlbumsPage extends HookConsumerWidget {
               runSpacing: 4,
               children: [
                 QuickFilterButton(
-                  label: 'all'.tr(),
+                  label: tr(t.all),
                   isSelected: filterMode.value == QuickFilterMode.all,
                   onTap: () {
                     changeFilter(QuickFilterMode.all);
@@ -176,7 +177,7 @@ class AlbumsPage extends HookConsumerWidget {
                   },
                 ),
                 QuickFilterButton(
-                  label: 'shared_with_me'.tr(),
+                  label: tr(t.shared_with_me),
                   isSelected: filterMode.value == QuickFilterMode.sharedWithMe,
                   onTap: () {
                     changeFilter(QuickFilterMode.sharedWithMe);
@@ -187,7 +188,7 @@ class AlbumsPage extends HookConsumerWidget {
                   },
                 ),
                 QuickFilterButton(
-                  label: 'my_albums'.tr(),
+                  label: tr(t.my_albums),
                   isSelected: filterMode.value == QuickFilterMode.myAlbums,
                   onTap: () {
                     changeFilter(QuickFilterMode.myAlbums);
@@ -267,11 +268,9 @@ class AlbumsPage extends HookConsumerWidget {
                                   )
                                 : sorted[index].ownerName != null
                                     ? Text(
-                                        '${sorted[index].assetCount} items • ${'album_thumbnail_shared_by'.tr(
-                                          args: [
-                                            sorted[index].ownerName!,
-                                          ],
-                                        )}',
+                                        '${sorted[index].assetCount} items • ${tr(t.shared_by_user, {
+                                              'user': sorted[index].ownerName!
+                                            })}',
                                         overflow: TextOverflow.ellipsis,
                                         style: context.textTheme.bodyMedium
                                             ?.copyWith(
@@ -420,7 +419,7 @@ class SortButton extends ConsumerWidget {
                 ),
               ),
               child: Text(
-                mode.label.tr(),
+                mode.getLabel(),
                 style: context.textTheme.titleSmall?.copyWith(
                   fontWeight: FontWeight.w600,
                   color: albumSortOption == mode
@@ -454,7 +453,7 @@ class SortButton extends ConsumerWidget {
                 ),
               ),
               Text(
-                albumSortOption.label.tr(),
+                albumSortOption.getLabel(),
                 style: context.textTheme.bodyLarge?.copyWith(
                   fontWeight: FontWeight.w500,
                   color: context.colorScheme.onSurface.withAlpha(225),

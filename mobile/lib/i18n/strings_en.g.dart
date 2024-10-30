@@ -727,6 +727,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	String get shared_link_options => 'Shared link options';
 	String get shared_links => 'Shared links';
 	String get shared_photos_and_videos_count => '{assetCount, plural, other {# shared photos & videos.}}';
+	String get shared_with_me => 'Shared with me';
 	String get shared_with_partner => 'Shared with {partner}';
 	String get sharing => 'Sharing';
 	String get sharing_enter_password => 'Please enter the password to view this page.';
@@ -2508,6 +2509,7 @@ extension on Translations {
 			case 'shared_link_options': return 'Shared link options';
 			case 'shared_links': return 'Shared links';
 			case 'shared_photos_and_videos_count': return '{assetCount, plural, other {# shared photos & videos.}}';
+			case 'shared_with_me': return 'Shared with me';
 			case 'shared_with_partner': return 'Shared with {partner}';
 			case 'sharing': return 'Sharing';
 			case 'sharing_enter_password': return 'Please enter the password to view this page.';
