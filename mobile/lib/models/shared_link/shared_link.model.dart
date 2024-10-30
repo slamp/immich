@@ -1,3 +1,5 @@
+import 'package:immich_mobile/i18n/strings.g.dart';
+import 'package:immich_mobile/utils/i18n.dart';
 import 'package:openapi/api.dart';
 
 enum SharedLinkSource { album, individual }
@@ -71,7 +73,7 @@ class SharedLink {
             : SharedLinkSource.individual,
         title = dto.type == SharedLinkType.ALBUM
             ? dto.album?.albumName.toUpperCase() ?? "UNKNOWN SHARE"
-            : "INDIVIDUAL SHARE",
+            : tr(t.individual_share).toUpperCase(),
         thumbAssetId = dto.type == SharedLinkType.ALBUM
             ? dto.album?.albumThumbnailAssetId
             : dto.assets.isNotEmpty
