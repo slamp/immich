@@ -1,8 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:immich_mobile/extensions/build_context_extensions.dart';
+import 'package:immich_mobile/i18n/strings.g.dart';
+import 'package:immich_mobile/utils/i18n.dart';
 import 'package:immich_mobile/providers/search/people.provider.dart';
 
 class PersonNameEditFormResult {
@@ -28,16 +29,16 @@ class PersonNameEditForm extends HookConsumerWidget {
     final isError = useState(false);
 
     return AlertDialog(
-      title: const Text(
-        "search_page_person_add_name_dialog_title",
+      title: Text(
+        tr(t.add_a_name),
         style: TextStyle(fontWeight: FontWeight.bold),
-      ).tr(),
+      ),
       content: SingleChildScrollView(
         child: TextFormField(
           controller: controller,
           autofocus: true,
           decoration: InputDecoration(
-            hintText: 'search_page_person_add_name_dialog_hint'.tr(),
+            hintText: tr(t.name_or_nickname),
             border: const OutlineInputBorder(),
             errorText: isError.value ? 'Error occured' : null,
           ),
@@ -49,12 +50,12 @@ class PersonNameEditForm extends HookConsumerWidget {
             PersonNameEditFormResult(false, ''),
           ),
           child: Text(
-            "search_page_person_add_name_dialog_cancel",
+            tr(t.cancel),
             style: TextStyle(
               color: Colors.red[300],
               fontWeight: FontWeight.bold,
             ),
-          ).tr(),
+          ),
         ),
         TextButton(
           onPressed: () async {
@@ -68,12 +69,12 @@ class PersonNameEditForm extends HookConsumerWidget {
             }
           },
           child: Text(
-            "search_page_person_add_name_dialog_save",
+            tr(t.save),
             style: TextStyle(
               color: context.primaryColor,
               fontWeight: FontWeight.bold,
             ),
-          ).tr(),
+          ),
         ),
       ],
     );
